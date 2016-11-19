@@ -1,4 +1,8 @@
-
+<!--
+author : Sugam Malviya
+git : https://github.com/Sugamm
+project : https://github.com/Sugamm/Ping-Pong/
+ -->
 <!doctype html>
 <html lang="en">
 <head>
@@ -37,7 +41,7 @@ ctx,
 keystate,
 /**
  * The player paddle
- * 
+ *
  * @type {Object}
  */
 player = {
@@ -63,7 +67,7 @@ player = {
 },
 /**
  * The ai paddle
- * 
+ *
  * @type {Object}
  */
 ai = {
@@ -89,9 +93,9 @@ ai = {
 		ctx.fillRect(this.x, this.y, this.width, this.height);
 	}
 },
-/**	
+/**
  * The ball object
- * 
+ *
  * @type {Object}
  */
 ball = {
@@ -102,7 +106,7 @@ ball = {
 	speed: 12,
 	/**
 	 * Serves the ball towards the specified side
-	 * 
+	 *
 	 * @param  {number} side 1 right
 	 *                       -1 left
 	 */
@@ -146,7 +150,7 @@ ball = {
 		var pdle = this.vel.x < 0 ? player : ai;
 		if (AABBIntersect(pdle.x, pdle.y, pdle.width, pdle.height,
 				this.x, this.y, this.side, this.side)
-		) {	
+		) {
 			// set the x position and calculate reflection angle
 			this.x = pdle===player ? player.x+player.width : ai.x - this.side;
 			var n = (this.y+this.side - pdle.y)/(pdle.height+this.side);
